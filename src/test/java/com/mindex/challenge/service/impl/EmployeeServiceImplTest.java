@@ -48,6 +48,7 @@ public class EmployeeServiceImplTest {
         testEmployee.setDepartment("Engineering");
         testEmployee.setPosition("Developer");
 
+
         // Create checks
         Employee createdEmployee = restTemplate.postForEntity(employeeUrl, testEmployee, Employee.class).getBody();
 
@@ -75,6 +76,10 @@ public class EmployeeServiceImplTest {
                         readEmployee.getEmployeeId()).getBody();
 
         assertEmployeeEquivalence(readEmployee, updatedEmployee);
+
+        //Reporting Structure checks
+
+
     }
 
     private static void assertEmployeeEquivalence(Employee expected, Employee actual) {
