@@ -37,10 +37,11 @@ public class EmployeeController {
         return employeeService.update(employee);
     }
 
-    @GetMapping("/employee/{id}")
-    public String report(@PathVariable String id){
+    @GetMapping("/report/{id}")
+    public int report(@PathVariable String id){
+        LOG.debug("Received report structure request for id [{}]", id);
         Employee theEmployee = employeeService.read(id);
         ReportingStructure temp = new ReportingStructure(theEmployee);
-        return temp.toString();
+        return temp.getNumberOfReports();
     }
 }

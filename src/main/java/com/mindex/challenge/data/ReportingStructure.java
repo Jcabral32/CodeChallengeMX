@@ -1,5 +1,7 @@
 package com.mindex.challenge.data;
 
+import java.util.List;
+
 public class ReportingStructure {
 
     private Employee employee;
@@ -19,7 +21,7 @@ public class ReportingStructure {
     }
 
     public void setNumberOfReports(Employee employee){
-        if(employee.getDirectReports().isEmpty()){
+        if(employee.getDirectReports() == null){
             this.numberOfReports = 0;
         } else{
            this.numberOfReports = calculateNumberOfReports(employee);
@@ -34,11 +36,12 @@ public class ReportingStructure {
         return employee;
     }
 
-    private int calculateNumberOfReports(Employee employee) {
+    public int calculateNumberOfReports(Employee employee) {
         int numberOfReports = 0;
-        if (employee.getDirectReports() != null) {
-            numberOfReports += employee.getDirectReports().size();
-            for (Employee directReport : employee.getDirectReports()) {
+        List<Employee> directReports = employee.getDirectReports();
+        if (directReports != null) {
+            numberOfReports += directReports.size();
+            for (Employee directReport : directReports) {
                 numberOfReports += calculateNumberOfReports(directReport);
             }
         }
