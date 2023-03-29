@@ -7,5 +7,5 @@ public interface CompensationService {
 
     Compensation create(Compensation comp);
 
-    Compensation read(String id);
+    Compensation read(String employeeId);
 }
