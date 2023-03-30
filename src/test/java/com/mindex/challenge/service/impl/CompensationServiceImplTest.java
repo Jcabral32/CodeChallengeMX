@@ -23,9 +23,6 @@ public class CompensationServiceImplTest {
     private String compensationIdUrl;
     private String employeeUrl;
 
-    @Autowired
-    private CompensationService compensationService;
-
     @LocalServerPort
     private int port;
 
