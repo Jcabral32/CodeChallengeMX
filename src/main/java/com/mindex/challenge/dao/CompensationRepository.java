@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import com.mindex.challenge.data.Compensation;
 @Repository
 public interface CompensationRepository extends MongoRepository<Compensation, String> {
-    Compensation findByEmployee_employeeId(String employeeId);//Spring Magic in the Underscores
+    Compensation findByEmployee_employeeId(String employeeId);//Spring Magic in the Underscore, DONT Refactor
 }

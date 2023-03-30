@@ -25,6 +25,19 @@ The following endpoints are available to use:
     * URL: localhost:8080/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
+* REPORT
+    * HTTP Method: GET
+    * URL: localhost:8080/report/{id} 
+    * RESPONSE: ReportingStructure  
+* CREATE
+    * HTTP Method: POST
+    * URL: localhost:8080/compensation
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
+* READ
+    * HTTP Method: GET
+    * URL: localhost:8080/compensation/{id}
+    * RESPONSE: Compensation 
 ```
 The Employee has a JSON schema of:
 ```json
@@ -53,6 +66,44 @@ The Employee has a JSON schema of:
   }
 }
 ```
+
+The Compensation has a JSON Schema of:
+
+```json
+{
+  "type": "Compensation",
+  "properties": {
+    "employee": {
+      "employeeId": {
+        "type": "string"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "position": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "directReports": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    "salary": {
+      "type": "float"
+    },
+    "effectiveDate": {
+      "type": "String"
+    }
+  }
+}
+```
+
 For all endpoints that require an "id" in the URL, this is the "employeeId" field.
 
 ## What to Implement
