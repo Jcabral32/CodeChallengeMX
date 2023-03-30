@@ -24,10 +24,6 @@ public class EmployeeServiceImplTest {
 
     private String employeeUrl;
     private String employeeIdUrl;
-
-    @Autowired
-    private EmployeeService employeeService;
-
     @LocalServerPort
     private int port;
 
@@ -76,9 +72,6 @@ public class EmployeeServiceImplTest {
                         readEmployee.getEmployeeId()).getBody();
 
         assertEmployeeEquivalence(readEmployee, updatedEmployee);
-
-        //Reporting Structure checks
-
 
     }
 
